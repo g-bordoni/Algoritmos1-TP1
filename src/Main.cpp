@@ -72,25 +72,18 @@ int main (int argc, char* argv[])
     StableMatcher::match(&shop_list, &client_list, grid_larger_size);
     delete[] grid_line;
 
-    Client* client;
-    for (int i = 0; i < client_list.length(); i++)
-    {
-        client = client_list.get(i);
-        std::cout << "Cliente: " << client->id << " " << client->ticket << std::endl;
-
-    }
-
     Shop* shop;
     for (int i = 0; i < shop_list.length(); i++)
     {
         shop = shop_list.get(i);
-        std::cout << "Shop: " << shop->id << std::endl;
+        std::cout << shop->id << std::endl;
         for (int k = 0; k < shop->scheduled_products; k++)
-            std::cout << shop->selected_clients_ids[k] << " ";
+        {   
+            if (k == 0) std::cout << shop->selected_clients_ids[k];
+            else std::cout << " " << shop->selected_clients_ids[k];
+        }
         std::cout << std::endl;
     }
-
-    std::cout << "DEBUGGER 0" << std::endl;
 
 
     return 0;
