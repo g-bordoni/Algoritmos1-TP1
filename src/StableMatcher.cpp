@@ -4,10 +4,9 @@ int StableMatcher::distance (int* shop, int* client)
 {
     int delta_x = abs(shop[0] - client[0]);
     int delta_y = abs(shop[1] - client[1]);
-    int minimum_path = (delta_x > delta_y) ? delta_x : delta_y;
+    int optimized_path = (delta_x > delta_y) ? delta_x : delta_y;
 
-    return minimum_path;
-
+    return optimized_path;
 }
 
 

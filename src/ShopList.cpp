@@ -20,9 +20,9 @@ void ShopList::insert(int id, int store, int lat, int lng)
     this->list[id] = *new_shop;
 }
 
-Shop* ShopList::get(int id)
+Shop* ShopList::get(int index)
 {
-    return &this->list[id];
+    return &this->list[index];
 }
 
 int ShopList::length()

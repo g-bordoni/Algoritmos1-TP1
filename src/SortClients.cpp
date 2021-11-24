@@ -2,10 +2,10 @@
 #include "../include/SortClients.hpp"
 
 
-void SortClients::merge (Client* client_array, int begin, int medium, int end)
+void SortClients::merge (Client* client_array, int begin, int middle, int end)
 {
-    int left_array_size = medium - begin + 1;
-    int right_array_size = end - medium;
+    int left_array_size = middle - begin + 1;
+    int right_array_size = end - middle;
     Client* left_array = new Client[left_array_size];
     Client* right_array = new Client[right_array_size];
 
@@ -13,7 +13,7 @@ void SortClients::merge (Client* client_array, int begin, int medium, int end)
     for (i = 0; i < left_array_size; i++)
         left_array[i] = client_array[begin + i];
     for (j = 0; j < right_array_size; j++)
-        right_array[j] = client_array[medium + j + 1];
+        right_array[j] = client_array[middle + j + 1];
 
     i = 0; j =0;
     k = begin;

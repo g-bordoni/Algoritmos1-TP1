@@ -7,11 +7,15 @@
 #include <iostream>
 #include <fstream>
 
+
 std::string* split (std::string original, int expected_size)
 {
+/*
+    Split a string in an array of length equals to the expected size
+*/
     std::string space = " ";
     int original_size = original.size();
-    int currently_index = 0;
+    int current_index = 0;
 
     std::string* splited_result = new std::string[expected_size];
     std::string character;
@@ -21,17 +25,18 @@ std::string* split (std::string original, int expected_size)
         character = original[i];
         if (space.compare(character) == 0)
         {
-            splited_result[currently_index] = splited_word;
+            splited_result[current_index] = splited_word;
             splited_word = "";
-            currently_index++;
+            current_index++;
             continue;
         }
         splited_word.append(character);
         
     }
-    splited_result[currently_index] = splited_word;
+    splited_result[current_index] = splited_word;
     return splited_result;
 }
+
 
 int main (int argc, char* argv[])
 {

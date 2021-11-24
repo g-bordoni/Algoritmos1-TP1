@@ -11,7 +11,7 @@ private:
 public:
     ShopList(int size);
     void insert(int id, int store, int lat, int lng);
-    Shop* get(int id);
+    Shop* get(int index);
     int length();
     ~ShopList();
 };

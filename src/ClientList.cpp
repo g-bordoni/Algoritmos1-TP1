@@ -9,20 +9,20 @@ ClientList::ClientList(int size)
 
 float ClientList::calculate_ticket(int age, std::string state, std::string purchase_mode)
 {
-    int score_purchase = BEGUIN_STEP_PURCHASE_MODES[0];
-    int score_state = BEGUIN_STEP_STATES[0];
+    int score_purchase = BEGIN_STEP_PURCHASE_MODES[0];
+    int score_state = BEGIN_STEP_STATES[0];
 
     int interator = 0;
     while (purchase_mode.compare(PURCHASE_MODES[interator]) != 0)
     {
-        score_purchase += BEGUIN_STEP_PURCHASE_MODES[1];
+        score_purchase += BEGIN_STEP_PURCHASE_MODES[1];
         interator++;
     }
 
     interator = 0;
     while (state.compare(STATES[interator]) != 0)
     {
-        score_state += BEGUIN_STEP_STATES[1];
+        score_state += BEGIN_STEP_STATES[1];
         interator++;
     }
 
@@ -44,9 +44,9 @@ void ClientList::insert(int id, int age, int lat, int lng, std::string state, st
         SortClients::merge_sort (this->list, 0, id);
 }
 
-Client* ClientList::get(int id)
+Client* ClientList::get(int index)
 {
-    return &this->list[id];
+    return &this->list[index];
 }
 
 int ClientList::length()
